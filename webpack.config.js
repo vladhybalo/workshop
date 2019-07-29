@@ -48,6 +48,9 @@ var config = {
                     "sass-loader"
                 ]
             },
+            // {
+            //
+            // },
             {
                 test: /\.pug$/,
                 use: ['pug-loader']
@@ -60,7 +63,7 @@ var config = {
             filename: '[name].css'
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src', 'index.pug'),
+            template: path.resolve(__dirname, 'src', 'index.html'),
             filename: 'index.html'
         }),
         new CopyPlugin([
