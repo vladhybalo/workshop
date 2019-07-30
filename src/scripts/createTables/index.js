@@ -1,10 +1,5 @@
-// import * as firebase from "firebase/app";
-// import 'firebase/storage';
-// import 'firebase/database';
-
 import firebase from 'firebase/app';
-import dateFormater from '../FormatDate';
-
+import DateFormater from '../FormatDate';
 
 class AddDayTimetable {
     constructor(start, end) {

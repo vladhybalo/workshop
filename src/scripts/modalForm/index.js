@@ -3,6 +3,7 @@ import ModalWindow from "../modalWindow";
 import * as firebase from "firebase/app";
 import DateFormater from "../FormatDate";
 
+const dateFormater = new DateFormater();
 
 class ModalForm extends ModalWindow {
     // constructor(template) {
@@ -28,9 +29,13 @@ class ModalForm extends ModalWindow {
     }
 
     _getFreePlaces() {
-        this.root.querySelector("#input-date").addEventListener('change', () => {
-            console.log("CHANNGE INPUT????")
-            getFreePlacesFromDatabase()
+        this.root.querySelector("#input-date").addEventListener('change', ({target}) => {
+            console.log("CHANNGE INPUT????");
+            console.log(target.value);
+            const date = dateFormater.getDateKey(new Date(target.value));
+            console.log(date);
+
+            getFreePlacesFromDatabase(date)
                 .then(places => {
                     console.log(places);
                     this._showCafeShema();
@@ -64,7 +69,7 @@ class ModalForm extends ModalWindow {
 
     _saveBookedTableOnDatabase() {
         const dateFormater = new DateFormater();
-        
+
     }
 
 }
@@ -72,19 +77,17 @@ class ModalForm extends ModalWindow {
 const a = new ModalForm(formTemplate);
 a.init(document.querySelector('.book-place'));
 
-function getFreePlacesFromDatabase() {
+function getFreePlacesFromDatabase(date) {
     const database = firebase.database();
 
     console.log(database);
 
-    return database.ref('tables/').once('value')
+    return database.ref('tables/' + date + '/').once('value')
         .then((snapshot) => {
             console.log(snapshot);
             console.log(snapshot.val());
 
             return snapshot.val();
-
-            // show cafe maket
         });
 
 }
