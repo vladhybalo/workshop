@@ -39,7 +39,7 @@ var config = {
             //
             // },
             {
-                test: /\.(css|sass)$/,
+                test: /\.(css|sass|scss)$/,
                 exclude: /node_modules/,
                 use: [
                     MiniCssExtractPlugin.loader,

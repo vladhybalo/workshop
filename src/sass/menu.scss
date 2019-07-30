@@ -1,0 +1,183 @@
+$first-color: #cba56f;
+$second-color: #b08247;
+$hover-color: #946726;
+$item-radius: 7px;
+
+$menu-height: 700px;
+
+main {
+    overflow: hidden;
+}
+
+.menu {
+    width: 100vw;
+    display: flex;
+    //height: calc(100vh - 75px);
+    height: calc(100vh - 75px);
+    min-height: $menu-height;
+    padding-top: 50px;
+    background-image: url("../assets/dog.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.menu-brochure {
+    position: relative;
+    height: 100%;
+    width: 350px;
+    z-index: 10;
+    margin: 40px 0 0 40px;
+
+    &__img {
+        width: auto;
+        max-width: 400px;
+        position: absolute;
+        //height: 100%;
+        height: $menu-height;
+        max-height: 700px;
+        object-fit: contain;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    &__book {
+        position: absolute;
+        transform: translateY(-90%);
+        display: flex;
+        align-items: flex-end;
+        right: 20px;
+        top: 0;
+        //overflow: hidden;
+    }
+
+    &__book-item {
+        background-color: #cba56f;
+        position: relative;
+        padding: 5px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:first-child {
+            padding-right: 20px;
+            border-top-left-radius: $item-radius;
+        }
+
+        &:last-child {
+            background-color: #b08247;
+            border-top-right-radius: $item-radius;
+
+            &::before {
+                content: '';
+                border-bottom: 30px solid #b08247;
+                border-left: 20px solid transparent;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                transform: translateX(-100%)
+            }
+        }
+
+        &:hover {
+            transform: translateY(-10%);
+        }
+    }
+
+    &__book-item-inner {
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        transition: .3s;
+        height: 100%;
+    }
+
+    &__left {
+        position: absolute;
+        top: 400px;
+        right: calc(-50% - 125px);
+        display: flex;
+        list-style: none;
+        transform: rotate(89.6deg);
+        z-index: 4;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__left-item {
+        background-color: $first-color;
+        position: relative;
+        padding: 7px 30px 5px 30px;
+        transition: .3s;
+        margin-right: 20px;
+        cursor: pointer;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 1px;
+            top: 0;
+            border-top: 30px solid $first-color;
+            border-left: 20px solid transparent;
+            transform: translateX(-100%);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            right: 1px;
+            top: 0;
+            border-bottom: 30px solid $first-color;
+            border-right: 20px solid transparent;
+            transform: translateX(100%);
+        }
+
+        &:first-child {
+            padding-left: 100px;
+            border-top-left-radius: $item-radius;
+            &::after {
+                border: none;
+            }
+        }
+
+        &:nth-child(2n) {
+            background-color: $second-color;
+
+            &::after {
+                border-left: 20px solid transparent;
+                border-top: 30px solid $second-color;
+            }
+
+            &::before {
+                border-bottom: 30px solid $second-color;
+            }
+        }
+
+        &:last-child {
+            border-top-right-radius: $item-radius;
+            &::before {
+                border: none;
+            }
+        }
+
+        &:hover {
+            //background-color: $hover-color;
+            //transform: scale(1.2);
+            transform: translateY(-10%) scale(1.1);
+            &:after {
+                //border-top-color: $hover-color;
+            }
+        }
+    }
+
+    &__left-item-link {
+        text-decoration: none;
+        color: #362519;
+
+        //&:hover {
+        //    transform: scale(1.1);
+        //}
+    }
+}
+

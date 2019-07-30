@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <!--<link type="text/css" rel="stylesheet" href="css/lightgallery.css" />-->
+    <!--<script src="https://www.jsdelivr.com/package/npm/lightgallery.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
 <!--
@@ -11,48 +16,190 @@
 -->
 
 <header class="header">
-    <nav class="header__menu">
+    <div class="my_ham">
+        <input type="checkbox" id="checkbox4" class="checkbox4 visually-hidden" ref="checkbox">
+        <label for="checkbox4">
+            <div class="hamburger hamburger4">
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
+                <span class="bar bar4"></span>
+                <span class="bar bar5"></span>
+            </div>
+        </label>
+    </div>
+    <nav class="header__menu hide_list">
         <ul class="header__menu-list">
             <li class="header__menu-li">
-                <a href="">
+                <a href="/" title="Home page" class="header__menu-a">
                     Home
                 </a>
             </li>
             <li class="header__menu-li">
-                <a href="#menu">
+                <a href="#menu" title="menu" class="header__menu-a">
                     Menu
                 </a>
             </li>
-<!--            <li class="header__menu-li">-->
-<!--                Home-->
-<!--            </li>-->
-<!--            <li class="header__menu-li">-->
-<!--                Home-->
-<!--            </li>-->
         </ul>
     </nav>
+
 </header>
 
 <main>
-    <section class="menu">
+    <section class="menu" data-depth="0.2">
         <div class="menu-brochure">
-            <img src="./assets/menu-bg.png" alt="" class="menu-brochure__img"/>
+            <img src="./assets/menu-bg-1.png" alt="" class="menu-brochure__img" data-depth="1"/>
             <div class="menu-brochure__book">
-                <div class="menu-brochure__book-item">
-                    <span>
+                <div class="menu-brochure__book-item book-place">
+                    <p class="menu-brochure__book-item-inner">
                         Book place
-                    </span>
+                    </p>
                 </div>
+                <!--<div class="middleware"></div>-->
                 <div class="menu-brochure__book-item">
-                    <span>
+                    <p class="menu-brochure__book-item-inner">
                         Book place
-                    </span>
+                    </p>
                 </div>
             </div>
 
-
+            <ul class="menu-brochure__left">
+                <li class="menu-brochure__left-item photos">
+                    <a href="#photos" class="menu-brochure__left-item-link">
+                        Photos
+                    </a>
+                </li>
+                <li class="menu-brochure__left-item">
+                    <a href="#menu" class="menu-brochure__left-item-link">
+                        Menu
+                    </a>
+                </li>
+                <li class="menu-brochure__left-item">
+                    <a href="#benefits" class="menu-brochure__left-item-link">
+                        Benefits
+                    </a>
+                </li>
+                <li class="menu-brochure__left-item">
+                    <a href="#contacts" class="menu-brochure__left-item-link">
+                        Contacts
+                    </a>
+                </li>
+            </ul>
         </div>
     </section>
+    <!--<div class="modal__wrap">-->
+        <!--<div class="modal">-->
+            <!--<div class="modal__close">-->
+                <!--<svg-->
+                        <!--aria-hidden="true"-->
+                        <!--data-prefix="fas"-->
+                        <!--data-icon="plus"-->
+                        <!--class="modal__close-icon svg-inline&#45;&#45;fa fa-plus fa-w-14"-->
+                        <!--role="img"-->
+                        <!--xmlns="http://www.w3.org/2000/svg"-->
+                        <!--viewBox="0 0 448 512"-->
+                <!--&gt;-->
+                    <!--<path-->
+                            <!--fill="currentColor"-->
+                            <!--d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67-->
+                            <!--0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67-->
+                             <!--0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"-->
+                    <!--&gt;-->
+                    <!--</path>-->
+                <!--</svg>-->
+            <!--</div>-->
+            <!--<div class="modal__content">-->
+                <!--<form action="" class="book-form">-->
+                    <!--<div class="book-form__field">-->
+                        <!--<label for="input-name" class="book-form__input-label">-->
+                            <!--Full name:-->
+                        <!--</label>-->
+                        <!--<div class="book-form__input-wrap">-->
+                            <!--<input-->
+                                    <!--type="text"-->
+                                    <!--id="input-name"-->
+                                    <!--class="book-form__input"-->
+                                    <!--required-->
+                                    <!--placeholder="Please, enter your full name"-->
+                            <!--&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="book-form__field">-->
+                        <!--<label for="input-date" class="book-form__input-label">-->
+                            <!--Select date:-->
+                        <!--</label>-->
+                        <!--<div class="book-form__input-wrap">-->
+                            <!--<input-->
+                                    <!--type="date"-->
+                                    <!--id="input-date"-->
+                                    <!--placeholder="Please, select wished date"-->
+                                    <!--required-->
+                                    <!--class="book-form__input"-->
+                            <!--&gt;-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="book-form__cafe-wrap">-->
+                        <!--<div class="book-form__cafe">-->
+                            <!--<div class="book-form__cafe-place booked">-->
+                                <!--<div class="book-form__cafe-chair">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-table">-->
+                                    <!--<img src="./assets/table-small.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-chair&#45;&#45;reverced">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="book-form__cafe-place">-->
+                                <!--<div class="book-form__cafe-chair">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-table">-->
+                                    <!--<img src="./assets/table-small.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-chair&#45;&#45;reverced">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="book-form__cafe-place selected-place">-->
+                                <!--<div class="book-form__cafe-chair">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-table">-->
+                                    <!--<img class="book-form__cafe-table-img" src="./assets/table-small.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-chair&#45;&#45;reverced">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="book-form__cafe-place booked">-->
+                                <!--<div class="book-form__cafe-chair">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-table">-->
+                                    <!--<img src="./assets/table-small.PNG" alt="">-->
+                                <!--</div>-->
+                                <!--<div class="book-form__cafe-chair&#45;&#45;reverced">-->
+                                    <!--<img src="./assets/chair.PNG" alt="">-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<button type="submit" class="book-form__submit">-->
+                        <!--Book table-->
+                    <!--</button>-->
+                <!--</form>-->
+            <!--</div>-->
+            <!--<div class="modal__dog">-->
+                <!--<img class="modal__dog-img" src="./assets/when%20modal%20is%20opened.gif" alt="">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="infinite-corgi">
+        <img class="infinite-corgi__img" src="./assets/corgiswimflip.gif" alt="">
+        <img class="infinite-corgi__img" src="./assets/corgiswimflip.gif" alt="">
+    </div>
 </main>
 
 </body>

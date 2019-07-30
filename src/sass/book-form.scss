@@ -1,0 +1,116 @@
+.book-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__field {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    &__input-wrap {
+        width: 100%;
+    }
+
+    &__input-label {
+        width: 100%;
+        padding-right: 1em;
+        text-align: right;
+        font-size: 18px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+
+    &__input {
+        height: 25px;
+        width: 100%;
+        max-width: 200px;
+        font-size: 16px;
+    }
+
+    &__cafe-wrap {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 30px;
+    }
+
+    &__cafe {
+        border: 1px solid black;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    &__cafe-place {
+        display: flex;
+        align-items: center;
+        width: auto;
+        padding: 20px;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+    }
+
+    &__cafe-chair--reverced {
+        transform: rotateY(180deg);
+    }
+
+    &__submit {
+        padding: 7px 15px;
+        border: 1px solid #b08247;
+        background-color: #b08247;
+        font-size: 18px;
+        margin-top: 30px;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            background-color: #946726;
+        }
+    }
+}
+
+.booked {
+    opacity: 0.6;
+
+    &:hover {
+        cursor: default;
+        transform: none;
+    }
+}
+
+.selected-place {
+    border: 1px solid red;
+    position: relative;
+    opacity: 0.9;
+    z-index: 19;
+
+    &::after {
+        content: 'reserved';
+        position: absolute;
+        transform: translate(-50%, -50%) rotateZ(45deg);
+        font-size: 25px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        top: 50%;
+        left: 50%;
+        color: red;
+        opacity: 1;
+        z-index: 2000;
+        animation: reserved 1.5s infinite alternate-reverse;
+    }
+}
+
+@keyframes reserved {
+    from {
+        transform: scale(1.3) translate(-50%, -50%) rotateZ(45deg);
+    }
+
+    to {
+        transform: scale(.9) translate(-50%, -50%) rotateZ(45deg);
+    }
+}
