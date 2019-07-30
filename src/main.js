@@ -9,7 +9,11 @@ function ready() {
     hamBtn.addEventListener('click', () => {
         console.log('toggle')
         menu.classList.toggle('hide_list');
-    })
+    });
+
+    setTimeout(() => {
+        document.querySelector('.loading-indicator').classList.add('hide');
+    }, 3000);
 }
 
 // import Parallax from 'parallax-js'
@@ -35,3 +39,7 @@ import initPhotos from "./scripts/modalPhotos";
 import ModalWindow from './scripts/modalWindow'
 
 import ModalForm from './scripts/modalForm'
+
+document.addEventListener('load', () => {
+    document.querySelector('.loading-indicator').classList.add('hide');
+})

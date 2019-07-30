@@ -6,7 +6,11 @@ $item-radius: 7px;
 $menu-height: 700px;
 
 main {
-    overflow: hidden;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
 }
 
 .menu {
