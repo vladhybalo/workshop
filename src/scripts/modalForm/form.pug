@@ -7,30 +7,30 @@ form.book-form
         label.book-form__input-label(for="input-date") Select date:
         .book-form__input-wrap
             input(type="date" id="input-date" class="book-form__input" required placeholder="Please, select wished date")
-    .book-form__cafe-wrap
+    div(class="book-form__cafe-wrap")
         .book-form__cafe
-            div(class="book-form__cafe-place booked")
+            div(class="book-form__cafe-place booked" data-index="0")
                 .book-form__cafe-chair
                     img(src="../../assets/chair.PNG")
                 .book-form__cafe-chair
                     img(src="../../assets/table-small.PNG")
                 .book-form__cafe-chair--reverced
                     img(src="../../assets/chair.PNG")
-            div(class="book-form__cafe-place")
+            div(class="book-form__cafe-place" data-index="1")
                 .book-form__cafe-chair
                     img(src="../../assets/chair.PNG")
                 .book-form__cafe-chair
                     img(src="../../assets/table-small.PNG")
                 .book-form__cafe-chair--reverced
                     img(src="../../assets/chair.PNG")
-            div(class="book-form__cafe-place selected-place")
+            div(class="book-form__cafe-place" data-index="2")
                 .book-form__cafe-chair
                     img(src="../../assets/chair.PNG")
                 .book-form__cafe-chair
                     img(src="../../assets/table-small.PNG")
                 .book-form__cafe-chair--reverced
                     img(src="../../assets/chair.PNG")
-            div(class="book-form__cafe-place booked")
+            div(class="book-form__cafe-place booked" data-index="3")
                 .book-form__cafe-chair
                     img(src="../../assets/chair.PNG")
                 .book-form__cafe-chair

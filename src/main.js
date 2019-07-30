@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
     console.log('d')
-    const menu = document.querySelector('.header__menu');
-    const hamBtn = document.querySelector('.hamburger');
-    hamBtn.addEventListener('click', () => {
-        console.log('toggle')
-        menu.classList.toggle('hide_list');
-    });
+    // const menu = document.querySelector('.header__menu');
+    // const hamBtn = document.querySelector('.hamburger');
+    // hamBtn.addEventListener('click', () => {
+    //     console.log('toggle')
+    //     menu.classList.toggle('hide_list');
+    // });
 
     setTimeout(() => {
         document.querySelector('.loading-indicator').classList.add('hide');
@@ -42,4 +42,20 @@ import ModalForm from './scripts/modalForm'
 
 document.addEventListener('load', () => {
     document.querySelector('.loading-indicator').classList.add('hide');
-})
+});
+
+import * as firebase from "firebase/app";
+import 'firebase/storage';
+import 'firebase/database';
+import firebaseConfig from './firebase.config'
+
+firebase.initializeApp(firebaseConfig);
+
+const database = firebase.database();
+
+console.log(database);
+
+database.ref('tables/').once('value', function(snapshot) {
+    console.log(snapshot);
+    console.log(snapshot.val());
+});

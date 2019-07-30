@@ -1,0 +1,55 @@
+.request {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%) translateX(-120%);
+    left: 10px;
+    background-color: #fff;
+    z-index: 10000;
+    border: 1px solid black;
+    display: none;
+
+    &__gif {
+
+    }
+
+    &__text {
+        font-size: 24px;
+        text-align: center;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+}
+
+.successful-request {
+    //animation: 5s show-request;
+    animation-duration: 3.4s;
+}
+
+.bad-request {
+    //transform: translateY(-50%) translateX(-120%);
+    //animation: 5s show-request;
+    animation-duration: 5s;
+}
+
+.show-request {
+    animation-name: show-request;
+    display: block;
+}
+
+
+@keyframes show-request {
+    0% {
+        transform: translateY(-50%) translateX(-120%);
+    }
+
+    20% {
+        transform: translateY(-50%) translateX(0%);
+    }
+
+    80% {
+        transform: translateY(-50%) translateX(0%);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(-120%);
+    }
+}

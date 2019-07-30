@@ -15,35 +15,35 @@
     - блок з меню
 -->
 
-<header class="header">
-    <div class="my_ham">
-        <input type="checkbox" id="checkbox4" class="checkbox4 visually-hidden" ref="checkbox">
-        <label for="checkbox4">
-            <div class="hamburger hamburger4">
-                <span class="bar bar1"></span>
-                <span class="bar bar2"></span>
-                <span class="bar bar3"></span>
-                <span class="bar bar4"></span>
-                <span class="bar bar5"></span>
-            </div>
-        </label>
-    </div>
-    <nav class="header__menu hide_list">
-        <ul class="header__menu-list">
-            <li class="header__menu-li">
-                <a href="/" title="Home page" class="header__menu-a">
-                    Home
-                </a>
-            </li>
-            <li class="header__menu-li">
-                <a href="#menu" title="menu" class="header__menu-a">
-                    Menu
-                </a>
-            </li>
-        </ul>
-    </nav>
+<!--<header class="header">-->
+    <!--<div class="my_ham">-->
+        <!--<input type="checkbox" id="checkbox4" class="checkbox4 visually-hidden" ref="checkbox">-->
+        <!--<label for="checkbox4">-->
+            <!--<div class="hamburger hamburger4">-->
+                <!--<span class="bar bar1"></span>-->
+                <!--<span class="bar bar2"></span>-->
+                <!--<span class="bar bar3"></span>-->
+                <!--<span class="bar bar4"></span>-->
+                <!--<span class="bar bar5"></span>-->
+            <!--</div>-->
+        <!--</label>-->
+    <!--</div>-->
+    <!--<nav class="header__menu hide_list">-->
+        <!--<ul class="header__menu-list">-->
+            <!--<li class="header__menu-li">-->
+                <!--<a href="/" title="Home page" class="header__menu-a">-->
+                    <!--Home-->
+                <!--</a>-->
+            <!--</li>-->
+            <!--<li class="header__menu-li">-->
+                <!--<a href="#menu" title="menu" class="header__menu-a">-->
+                    <!--Menu-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</nav>-->
 
-</header>
+<!--</header>-->
 
 <main>
     <section class="menu" data-depth="0.2">
@@ -197,12 +197,31 @@
         <!--</div>-->
     <!--</div>-->
     <div class="loading-indicator">
-        <img src="./assets/fun%20with%20tortula.gif" alt="">
+        <img src="./assets/fun%20with%20tortula.gif" alt="" class="loading-indicator__gif">
+        <p class="loading-indicator__text">
+            Loading...
+        </p>
     </div>
     <div class="infinite-corgi">
         <img class="infinite-corgi__img" src="./assets/corgiswimflip.gif" alt="">
         <img class="infinite-corgi__img" src="./assets/corgiswimflip.gif" alt="">
     </div>
+    <div class="request bad-request" id="bad-request">
+        <img src="./assets/bad%20request.gif" alt="" class="request__gif">
+        <p class="request__text">
+            Bad idea
+        </p>
+    </div>
+    <div class="request successful-request" id="successful-request">
+        <img
+                src="./assets/give%20me%20five%20(after%20successful%20form%20verifired).gif"
+                alt=""
+                class="request__gif">
+        <p class="request__text">
+            Successful!
+        </p>
+    </div>
+
 </main>
 
 </body>

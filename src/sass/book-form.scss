@@ -35,6 +35,8 @@
         display: flex;
         justify-content: center;
         padding-top: 30px;
+        display: none;
+        overflow: hidden;
     }
 
     &__cafe {
@@ -72,6 +74,11 @@
         &:hover {
             background-color: #946726;
         }
+    }
+
+    &__show {
+        animation: 1.5s show-shema;
+        display: flex;
     }
 }
 
@@ -112,5 +119,15 @@
 
     to {
         transform: scale(.9) translate(-50%, -50%) rotateZ(45deg);
+    }
+}
+
+@keyframes show-shema {
+    from {
+        max-height: 0;
+    }
+
+    to {
+        max-height: 200px;
     }
 }
