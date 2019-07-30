@@ -1,11 +1,6 @@
 import ModalWindow from "../modalWindow";
 import template from './immediatly-book.pug';
 
-// debugger;
-// let a = 'dfsdfs;dlfmsd;kl';
-// console.dir(template);
-// console.dir(template(a));
-
 class ImmediatlyBook extends ModalWindow {
     hide(e) {
         super.hide(e);

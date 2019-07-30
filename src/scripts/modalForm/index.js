@@ -1,6 +1,8 @@
 import formTemplate from './form.pug'
 import ModalWindow from "../modalWindow";
 import * as firebase from "firebase/app";
+import DateFormater from "../FormatDate";
+
 
 class ModalForm extends ModalWindow {
     // constructor(template) {
@@ -32,7 +34,7 @@ class ModalForm extends ModalWindow {
                 .then(places => {
                     console.log(places);
                     this._showCafeShema();
-                    this._handlePlaceBook();
+                    this._bookTable();
                 });
         })
     }
@@ -41,16 +43,14 @@ class ModalForm extends ModalWindow {
         this.root.querySelector('.book-form__cafe-wrap').classList.add('book-form__show');
     }
 
-    _handlePlaceBook() {
+    _bookTable() {
         this.root.querySelector('.book-form__cafe-wrap').addEventListener('click', e => {
             const bookedPlace = e.target.closest('.book-form__cafe-place');
-            console.log(bookedPlace);
+
             if (bookedPlace.classList.contains('booked') || bookedPlace.classList.contains('selected-place')) {
-                // show wtf dog)
                 document.querySelector('.bad-request').classList.add('show-request');
             } else {
                 const index = +bookedPlace.dataset.index;
-                // rewrite concrete place
 
                 bookedPlace.classList.add('selected-place');
 
@@ -60,6 +60,11 @@ class ModalForm extends ModalWindow {
                 }, 5000);
             }
         });
+    }
+
+    _saveBookedTableOnDatabase() {
+        const dateFormater = new DateFormater();
+        
     }
 
 }

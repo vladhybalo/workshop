@@ -1,62 +1,35 @@
-import './sass/styles.scss'
+import './sass/styles.scss';
+import firebase from "firebase/app";
+import 'firebase/storage';
+import 'firebase/database';
+import firebaseConfig from './firebase.config';
+import initPhotos from "./scripts/modalPhotos";
+import ImmediatlyBook from './scripts/modalImmediatlyBook';
+import ModalWindow from './scripts/modalWindow';
+import ModalForm from './scripts/modalForm';
+import AddDayTimetable from './scripts/createTables';
+
+firebase.initializeApp(firebaseConfig);
 
 document.addEventListener("DOMContentLoaded", ready);
 
 function ready() {
-    console.log('d')
-    // const menu = document.querySelector('.header__menu');
-    // const hamBtn = document.querySelector('.hamburger');
-    // hamBtn.addEventListener('click', () => {
-    //     console.log('toggle')
-    //     menu.classList.toggle('hide_list');
-    // });
-
     setTimeout(() => {
         document.querySelector('.loading-indicator').classList.add('hide');
     }, 3000);
 }
-
-// import Parallax from 'parallax-js'
 //
-// var scene = document.querySelector('main');
-// var parallaxInstance = new Parallax(scene);
-//
-// import lightGallery from 'lightgallery.js'
+// document.addEventListener('load', () => {
+//     document.querySelector('.loading-indicator').classList.add('hide');
+// });
 
-// import 'lightgallery.js';
-// import 'lg-zoom.js';
-// import 'lightgallery.js/dist/css/lightgallery.css';
+function setTimetable(daysNumber = 10) {
+    const start = new Date();
+    const end = new Date(new Date().setDate(new Date().getDate() + daysNumber));
 
-// lightGallery(document.querySelector('.gallery'));
+    const addDayTimeTable = new AddDayTimetable(start, end);
 
-// import initModal from './scripts/modalWindow';
-import initPhotos from "./scripts/modalPhotos";
-import ImmediatlyBook from './scripts/modalImmediatlyBook'
-//
-// initModal();
+    addDayTimeTable.publish();
+}
 
-// initPhotos();
-
-import ModalWindow from './scripts/modalWindow'
-
-import ModalForm from './scripts/modalForm'
-
-document.addEventListener('load', () => {
-    document.querySelector('.loading-indicator').classList.add('hide');
-});
-
-import * as firebase from "firebase/app";
-import 'firebase/storage';
-import 'firebase/database';
-import firebaseConfig from './firebase.config'
-
-firebase.initializeApp(firebaseConfig);
-
-const database = firebase.database();
-
-console.log(database);
-
-database.ref('tables/').once('value', function(snapshot) {
-    console.log(snapshot);
-    console.log(snapshot.val());
-});
+// setTimetable();
