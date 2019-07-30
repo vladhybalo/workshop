@@ -1,0 +1,30 @@
+.immediatly-book {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+        text-align: center;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 3em;
+    }
+
+    &__description {
+        font-size: 3em;
+        text-align: center;
+    }
+
+    &__button {
+        border: 1px solid #a4a4a4;
+        padding: .5rem 1rem;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 1.5em;
+        cursor: pointer;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}

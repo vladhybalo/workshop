@@ -1,27 +1,3 @@
-// function initForm() {
-//     setMinDateValue();
-// }
-//
-// // after date entrance
-// function getFreePlaces() {
-//
-// }
-//
-function formatDate(date) {
-    return ('0' + date).slice(-2);
-}
-//
-// function setMinDateValue() {
-//     const today = new Date();
-//     const dd = formatDate(today.getDate());
-//     const mm = formatDate(today.getMonth() + 1); //January is 0!
-//     const yyyy = formatDate(today.getFullYear());
-//
-//     const result = `${yyyy}-${mm}-${dd}`;
-//
-//     document.getElementById("input-date").setAttribute("min", result);
-// }
-
 import formTemplate from './form.pug'
 import ModalWindow from "../modalWindow";
 import * as firebase from "firebase/app";
@@ -79,6 +55,9 @@ class ModalForm extends ModalWindow {
                 bookedPlace.classList.add('selected-place');
 
                 document.querySelector('.successful-request').classList.add('show-request');
+                setTimeout(() => {
+                    document.querySelector('.successful-request').classList.remove('show-request');
+                }, 5000);
             }
         });
     }
@@ -105,5 +84,7 @@ function getFreePlacesFromDatabase() {
 
 }
 
-
+function formatDate(date) {
+    return ('0' + date).slice(-2);
+}
 

@@ -31,6 +31,7 @@ function ready() {
 
 // import initModal from './scripts/modalWindow';
 import initPhotos from "./scripts/modalPhotos";
+import ImmediatlyBook from './scripts/modalImmediatlyBook'
 //
 // initModal();
 
