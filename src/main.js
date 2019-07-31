@@ -23,6 +23,8 @@ function ready() {
 //     document.querySelector('.loading-indicator').classList.add('hide');
 // });
 
+
+// admin functional
 function setTimetable(daysNumber = 10) {
     const start = new Date();
     const end = new Date(new Date().setDate(new Date().getDate() + daysNumber));

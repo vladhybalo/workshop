@@ -56,13 +56,9 @@ class ModalForm extends ModalWindow {
                 document.querySelector('.bad-request').classList.add('show-request');
             } else {
                 const index = +bookedPlace.dataset.index;
-
                 bookedPlace.classList.add('selected-place');
 
                 document.querySelector('.successful-request').classList.add('show-request');
-                setTimeout(() => {
-                    document.querySelector('.successful-request').classList.remove('show-request');
-                }, 5000);
             }
         });
     }
